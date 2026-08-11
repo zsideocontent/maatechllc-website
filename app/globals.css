@@ -4,10 +4,62 @@
   --font-sans: var(--font-inter);
 }
 
+:root {
+  --neo-surface: #F1F0F6;
+  --neo-light: #FFFFFF;
+  --neo-dark: #C7CAD9;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
 body {
   font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+  background: #FAFAFC;
+}
+
+/* ---------- Neomorphic surface utilities ---------- */
+
+.neo-raised {
+  background: var(--neo-surface);
+  box-shadow:
+    8px 8px 16px var(--neo-dark),
+    -8px -8px 16px var(--neo-light);
+}
+
+.neo-raised-sm {
+  background: var(--neo-surface);
+  box-shadow:
+    4px 4px 10px var(--neo-dark),
+    -4px -4px 10px var(--neo-light);
+}
+
+.neo-pressed {
+  background: var(--neo-surface);
+  box-shadow:
+    inset 5px 5px 10px var(--neo-dark),
+    inset -5px -5px 10px var(--neo-light);
+}
+
+.neo-flat {
+  background: var(--neo-surface);
+}
+
+.neo-btn {
+  background: var(--neo-surface);
+  box-shadow:
+    6px 6px 14px var(--neo-dark),
+    -6px -6px 14px var(--neo-light);
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+.neo-btn:hover {
+  box-shadow:
+    3px 3px 8px var(--neo-dark),
+    -3px -3px 8px var(--neo-light);
+}
+.neo-btn:active {
+  box-shadow:
+    inset 4px 4px 8px var(--neo-dark),
+    inset -4px -4px 8px var(--neo-light);
 }

@@ -1,85 +1,79 @@
-const blocks = [
-  // [col, row, size, color, delay]
-  [0, 5, 1, "#6C3FF5", "0s"], [1, 5, 1, "#00D9FF", "0.05s"], [2, 5, 1, "#6C3FF5", "0.1s"],
-  [0, 4, 1, "#00D9FF", "0.15s"], [1, 4, 1, "#6C3FF5", "0.2s"], [2, 4, 1, "#6C3FF5", "0.25s"],
-  [0, 3, 1, "#6C3FF5", "0.3s"], [1, 3, 1, "#6C3FF5", "0.35s"], [2, 3, 1, "#00D9FF", "0.4s"],
-  [3, 3, 1, "#6C3FF5", "0.45s"],
-  [3, 2, 1, "#00D9FF", "0.5s"], [4, 2, 1, "#6C3FF5", "0.55s"],
-  [4, 1, 1, "#6C3FF5", "0.6s"], [5, 1, 1, "#00D9FF", "0.65s"],
-  [5, 0, 1, "#00D9FF", "0.7s"], [6, 0, 1, "#6C3FF5", "0.75s"],
-] as const;
+import { Check, Clock, MessageSquare, Wrench } from "lucide-react";
+
+const flowSteps = [
+  { icon: MessageSquare, label: "You message us", sub: '"Checkout page is broken"', done: true },
+  { icon: Clock, label: "PM + AI diagnose it", sub: "Context already known", done: true },
+  { icon: Wrench, label: "Right specialist assigned", sub: "No searching, no explaining", done: true },
+  { icon: Check, label: "Fixed & confirmed", sub: "You get an update, not a status page", done: false },
+];
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden bg-white pt-20 pb-10 lg:pt-28 lg:pb-16">
+    <section className="relative overflow-hidden pt-16 pb-10 lg:pt-24 lg:pb-16">
       <div className="mx-auto max-w-7xl px-6 lg:px-10 grid lg:grid-cols-2 gap-16 items-center">
         <div>
-          <div className="inline-flex items-center gap-2 rounded-full bg-[#6C3FF5]/8 px-4 py-1.5 mb-6">
+          <div className="neo-raised-sm inline-flex items-center gap-2 rounded-full px-4 py-1.5 mb-7">
             <span className="w-1.5 h-1.5 rounded-full bg-[#00D9FF]" />
             <span className="text-xs font-bold uppercase tracking-widest text-[#6C3FF5]">
-              AI-run agency, since day one
+              Outsourced Technology Department
             </span>
           </div>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-[1.05] tracking-tight mb-6 text-balance">
-            Your business,{" "}
-            <span className="bg-gradient-to-r from-[#6C3FF5] to-[#00D9FF] bg-clip-text text-transparent">
-              running on AI
-            </span>
-            , not on us
+          <h1 className="text-4xl sm:text-5xl lg:text-[3.4rem] font-extrabold text-slate-900 leading-[1.08] tracking-tight mb-6 text-balance">
+            Your Dedicated Tech Team.
+            <br />
+            <span className="text-[#6C3FF5]">Without the Cost of Hiring One.</span>
           </h1>
           <p className="text-lg text-slate-500 leading-relaxed max-w-lg mb-9">
-            MAA Tech Agency builds the AI automations, dashboards, and systems
-            that run underneath real businesses, websites, SEO, ad tracking,
-            and the agents that handle the busywork in between. We use
-            exactly what we sell, on our own agency, every day.
+            Stop finding a new freelancer every time something breaks. One
+            technology partner who already knows your business, your stack,
+            and where everything lives.
           </p>
           <div className="flex flex-wrap items-center gap-4">
             <a
-              href="#contact"
-              className="inline-flex items-center justify-center rounded-full bg-[#6C3FF5] px-8 py-4 text-sm font-bold text-white hover:bg-[#5a32d4] transition-colors"
+              href="/contact"
+              className="neo-btn inline-flex items-center justify-center rounded-full px-8 py-4 text-sm font-bold text-[#6C3FF5]"
             >
-              Book a Free 30-Min Call &rarr;
+              Book Your Tech Freedom Call &rarr;
             </a>
             <a
-              href="#work"
-              className="inline-flex items-center justify-center rounded-full border-2 border-slate-200 px-8 py-4 text-sm font-bold text-slate-700 hover:border-slate-300 transition-colors"
+              href="#how-it-works"
+              className="inline-flex items-center justify-center rounded-full px-8 py-4 text-sm font-bold text-slate-500 hover:text-slate-700 transition-colors"
             >
-              See Our Work
+              See How It Works &rarr;
             </a>
           </div>
         </div>
 
-        <div className="relative h-[420px] lg:h-[480px] flex items-center justify-center">
-          <div className="absolute inset-0 rounded-[3rem] bg-gradient-to-br from-[#6C3FF5]/5 to-[#00D9FF]/5" />
-          <div
-            className="relative grid gap-2.5"
-            style={{ gridTemplateColumns: "repeat(7, minmax(0, 1fr))", gridTemplateRows: "repeat(6, minmax(0, 1fr))" }}
-          >
-            {blocks.map(([col, row, , color, delay], i) => (
+        <div className="neo-raised rounded-[2rem] p-7 sm:p-9">
+          <p className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-6">
+            What actually happens
+          </p>
+          <div className="space-y-3">
+            {flowSteps.map((step, i) => (
               <div
-                key={i}
-                className="rounded-lg animate-[float_3s_ease-in-out_infinite]"
-                style={{
-                  gridColumnStart: (col as number) + 1,
-                  gridRowStart: 6 - (row as number),
-                  width: "3.2rem",
-                  height: "3.2rem",
-                  background: color as string,
-                  animationDelay: delay as string,
-                  boxShadow: `0 10px 30px -8px ${color}66`,
-                }}
-              />
+                key={step.label}
+                className={`flex items-center gap-4 rounded-2xl p-4 ${
+                  step.done ? "neo-pressed" : "neo-raised-sm"
+                }`}
+              >
+                <div
+                  className={`flex-shrink-0 w-11 h-11 rounded-xl flex items-center justify-center ${
+                    step.done ? "bg-[#6C3FF5]" : "bg-gradient-to-br from-[#6C3FF5] to-[#00D9FF]"
+                  }`}
+                >
+                  <step.icon size={19} strokeWidth={2.25} className="text-white" />
+                </div>
+                <div className="min-w-0">
+                  <p className="text-sm font-bold text-slate-800">
+                    {i + 1}. {step.label}
+                  </p>
+                  <p className="text-xs text-slate-500 truncate">{step.sub}</p>
+                </div>
+              </div>
             ))}
           </div>
         </div>
       </div>
-
-      <style>{`
-        @keyframes float {
-          0%, 100% { transform: translateY(0); }
-          50% { transform: translateY(-8px); }
-        }
-      `}</style>
     </section>
   );
 }

@@ -1,54 +1,51 @@
-const testimonials = [
-  {
-    name: "Jeremy",
-    business: "Ridgeback Builders — Construction",
-    video: "/testimonials/testimonial-1.mp4",
-    poster: "/testimonials/testimonial-1-poster.jpg",
-  },
-  {
-    name: "Jason",
-    business: "Vending Business",
-    video: "/testimonials/testimonial-2.mp4",
-    poster: "/testimonials/testimonial-2-poster.jpg",
-  },
+import Script from "next/script";
+
+const videos = [
+  { mediaId: "7xs8re946a", aspect: 0.5660377358490566 },
+  { mediaId: "t8qc1fvn71", aspect: 0.5625 },
 ];
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="py-24 bg-white">
+    <section id="proof" className="py-24">
+      <Script src="https://fast.wistia.com/player.js" strategy="lazyOnload" />
+      {videos.map((v) => (
+        <Script
+          key={v.mediaId}
+          src={`https://fast.wistia.com/embed/${v.mediaId}.js`}
+          strategy="lazyOnload"
+          type="module"
+        />
+      ))}
+
       <div className="mx-auto max-w-7xl px-6 lg:px-10 grid lg:grid-cols-[minmax(0,1fr)_auto] gap-16 items-center">
         <div>
           <p className="text-sm font-bold uppercase tracking-widest text-[#6C3FF5] mb-3">
-            In Their Words
+            Proof
           </p>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-5 text-balance">
-            Client testimonials
+            Real clients, on camera
           </h2>
           <p className="text-slate-500 leading-relaxed max-w-md">
-            Real clients, on camera, unscripted. We'd rather show you two
-            honest 30-second clips than write copy that sounds good and
-            proves nothing.
+            No stock testimonials, no written quotes we typed ourselves.
+            Two clients, unscripted, on what actually changed.
           </p>
         </div>
 
         <div className="grid grid-cols-2 gap-6 w-full lg:w-auto">
-          {testimonials.map((t) => (
-            <div
-              key={t.name}
-              className="rounded-2xl overflow-hidden border border-slate-200 bg-slate-50 w-full lg:w-56"
-            >
-              <video
-                controls
-                preload="metadata"
-                poster={t.poster}
-                className="w-full aspect-[9/16] object-cover bg-black"
-              >
-                <source src={t.video} type="video/mp4" />
-              </video>
-              <div className="p-4">
-                <p className="font-bold text-slate-900 text-sm">{t.name}</p>
-                <p className="text-xs text-slate-500">{t.business}</p>
-              </div>
+          {videos.map((v) => (
+            <div key={v.mediaId} className="neo-raised rounded-2xl overflow-hidden p-2 w-full lg:w-56">
+              <style>{`
+                wistia-player[media-id='${v.mediaId}']:not(:defined) {
+                  background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/${v.mediaId}/swatch');
+                  display: block;
+                  filter: blur(5px);
+                  padding-top: ${(1 / v.aspect) * 100}%;
+                  border-radius: 1rem;
+                }
+              `}</style>
+              {/* @ts-expect-error -- wistia-player is a custom element */}
+              <wistia-player media-id={v.mediaId} aspect={v.aspect}></wistia-player>
             </div>
           ))}
         </div>
