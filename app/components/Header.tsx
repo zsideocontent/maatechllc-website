@@ -13,11 +13,8 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-30 bg-[#FAFAFC]/90 backdrop-blur">
       <div className="mx-auto max-w-7xl px-6 lg:px-10 flex items-center justify-between h-20">
-        <Link href="/" className="flex items-center gap-2.5">
-          <Image src="/logos/maa-icon.png" alt="MAA Tech Agency" width={32} height={32} />
-          <span className="font-extrabold text-base tracking-tight text-slate-900">
-            MAA TECH <span className="font-medium text-slate-500">AGENCY</span>
-          </span>
+        <Link href="/" className="flex items-center">
+          <Image src="/logos/maa-logo.png" alt="MAA Tech Agency" width={583} height={176} className="h-8 w-auto" priority />
         </Link>
 
         <nav className="hidden lg:flex items-center gap-8">

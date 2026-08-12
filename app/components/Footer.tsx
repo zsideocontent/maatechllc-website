@@ -6,12 +6,7 @@ export default function Footer() {
     <footer className="pt-16">
       <div className="mx-auto max-w-7xl px-6 lg:px-10 pb-16 grid sm:grid-cols-3 gap-10">
         <div>
-          <div className="flex items-center gap-2.5 mb-4">
-            <Image src="/logos/maa-icon.png" alt="MAA Tech Agency" width={28} height={28} />
-            <span className="font-extrabold text-slate-800 text-sm">
-              MAA TECH <span className="font-medium text-slate-400">AGENCY</span>
-            </span>
-          </div>
+          <Image src="/logos/maa-logo.png" alt="MAA Tech Agency" width={583} height={176} className="h-7 w-auto mb-4" />
           <p className="text-sm text-slate-500 leading-relaxed max-w-xs">
             Your dedicated tech team, without the cost of hiring one.
           </p>
