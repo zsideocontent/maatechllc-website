@@ -22,8 +22,8 @@ export default function Footer() {
 
         <div>
           <h4 className="text-slate-800 font-bold text-sm mb-4">Get In Touch</h4>
-          <a href="mailto:hello@maatechllc.com" className="text-sm text-slate-500 hover:text-slate-800 transition-colors">
-            hello@maatechllc.com
+          <a href="mailto:ahmad@maatechllc.com" className="text-sm text-slate-500 hover:text-slate-800 transition-colors">
+            ahmad@maatechllc.com
           </a>
         </div>
       </div>

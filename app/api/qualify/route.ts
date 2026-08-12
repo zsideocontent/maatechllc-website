@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 
 // TODO: same gap as other MAA sites built this cycle — this only logs
 // server-side for now. Needs an email API key or a Web3Forms/Formspree
-// key set as a Vercel env var to actually deliver to hello@maatechllc.com.
+// key set as a Vercel env var to actually deliver to ahmad@maatechllc.com.
 
 export async function POST(request: Request) {
   try {

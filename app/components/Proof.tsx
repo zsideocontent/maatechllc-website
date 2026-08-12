@@ -118,10 +118,6 @@ export default function Proof() {
             </motion.button>
           </div>
         )}
-
-        <a href="/case-studies" className="block text-center mt-6 text-sm font-bold text-[#6C3FF5] hover:underline">
-          See the full case study &rarr;
-        </a>
       </div>
     </section>
   );

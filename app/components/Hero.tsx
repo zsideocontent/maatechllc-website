@@ -5,9 +5,9 @@ export default function Hero() {
     <section className="relative overflow-hidden pt-16 pb-10 lg:pt-24 lg:pb-16">
       <div className="mx-auto max-w-7xl px-6 lg:px-10 grid lg:grid-cols-2 gap-16 items-center">
         <div>
-          <div className="neo-raised-sm inline-flex items-center gap-2 rounded-full px-4 py-1.5 mb-7">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#00D9FF]" />
-            <span className="text-xs font-bold uppercase tracking-widest text-[#6C3FF5]">
+          <div className="neo-raised-sm inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 sm:px-4 mb-7 max-w-full">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#00D9FF] flex-shrink-0" />
+            <span className="text-[10px] sm:text-xs font-bold uppercase tracking-wide sm:tracking-widest text-[#6C3FF5] whitespace-nowrap">
               Outsourced Technology Department
             </span>
           </div>

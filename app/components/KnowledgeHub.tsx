@@ -15,7 +15,7 @@ const satellites = [
   { icon: CreditCard, label: "Payments", angle: 210 },
 ];
 
-const RADIUS = 108;
+const RADIUS = 100;
 
 function pos(angleDeg: number) {
   const rad = (angleDeg * Math.PI) / 180;
@@ -27,8 +27,8 @@ function pos(angleDeg: number) {
 
 export default function KnowledgeHub() {
   return (
-    <div className="relative mx-auto" style={{ width: BOX, height: BOX }}>
-      <svg viewBox={`0 0 ${BOX} ${BOX}`} className="absolute inset-0 w-full h-full" aria-hidden="true">
+    <div className="relative w-full max-w-[260px] mx-auto" style={{ aspectRatio: "1 / 1" }}>
+      <svg viewBox={`0 0 ${BOX} ${BOX}`} className="absolute inset-0 w-full h-full overflow-visible" aria-hidden="true">
         {satellites.map((s) => {
           const p = pos(s.angle);
           return (
@@ -72,16 +72,21 @@ export default function KnowledgeHub() {
           <motion.div
             key={s.label}
             className="absolute flex flex-col items-center"
-            style={{ left: p.x, top: p.y, transform: "translate(-50%, -50%)" }}
+            style={{
+              left: `${(p.x / BOX) * 100}%`,
+              top: `${(p.y / BOX) * 100}%`,
+              transform: "translate(-50%, -50%)",
+              width: 74,
+            }}
             initial={{ opacity: 0, scale: 0.5 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3 + i * 0.08, duration: 0.4 }}
           >
-            <div className="neo-raised-sm w-10 h-10 rounded-xl flex items-center justify-center bg-[var(--neo-surface)]">
-              <Icon size={16} strokeWidth={2.25} className="text-[#6C3FF5]" />
+            <div className="neo-raised-sm w-8 h-8 sm:w-10 sm:h-10 rounded-xl flex items-center justify-center bg-[var(--neo-surface)] flex-shrink-0">
+              <Icon size={14} strokeWidth={2.25} className="text-[#6C3FF5]" />
             </div>
-            <p className="text-[10px] font-semibold text-slate-500 mt-1 whitespace-nowrap">{s.label}</p>
+            <p className="text-[9px] sm:text-[10px] font-semibold text-slate-500 mt-1 text-center leading-tight">{s.label}</p>
           </motion.div>
         );
       })}
@@ -89,11 +94,11 @@ export default function KnowledgeHub() {
       <motion.div
         className="absolute flex items-center justify-center"
         style={{
-          left: CENTER,
-          top: CENTER,
+          left: `${(CENTER / BOX) * 100}%`,
+          top: `${(CENTER / BOX) * 100}%`,
           transform: "translate(-50%, -50%)",
-          width: 66,
-          height: 66,
+          width: 56,
+          height: 56,
         }}
         initial={{ opacity: 0, scale: 0.6 }}
         whileInView={{ opacity: 1, scale: 1 }}
@@ -110,7 +115,7 @@ export default function KnowledgeHub() {
           className="relative w-full h-full rounded-full flex items-center justify-center"
           style={{ background: "linear-gradient(135deg, #6C3FF5, #00D9FF)" }}
         >
-          <Brain size={26} strokeWidth={2} className="text-white" />
+          <Brain size={22} strokeWidth={2} className="text-white" />
         </div>
       </motion.div>
     </div>
