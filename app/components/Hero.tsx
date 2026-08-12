@@ -1,4 +1,4 @@
-import HeroFlow from "./HeroFlow";
+import Image from "next/image";
 
 export default function Hero() {
   return (
@@ -31,7 +31,16 @@ export default function Hero() {
           </div>
         </div>
 
-        <HeroFlow />
+        <div className="neo-raised rounded-[2rem] p-6">
+          <Image
+            src="/graphics/hero-flow.png"
+            alt="What actually happens: a WhatsApp message comes in, an AI agent investigates, then either fixes it automatically or a PM is notified, a developer fixes it, and a PM verifies it before the task is marked done"
+            width={800}
+            height={800}
+            className="w-full h-auto rounded-2xl"
+            priority
+          />
+        </div>
       </div>
     </section>
   );
