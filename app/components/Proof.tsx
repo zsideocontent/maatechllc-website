@@ -7,46 +7,51 @@ import { ChevronDown } from "lucide-react";
 
 const wins = [
   {
+    image: "/proof/cr8-health-seo-scale.png",
+    title: "CR8 Health",
+    result: "SEO scaled two locations to $40K/month each, and one to $200K/month, tracked through a personalized Google + Meta ads dashboard.",
+  },
+  {
+    image: "/proof/integrative-med-seo.png",
+    title: "Integrative Medicine US",
+    result: "Ranked #1 on Google, with their entire GoHighLevel system built from the ground up.",
+  },
+  {
     image: "/proof/cr8-health-crm.png",
     title: "CR8 Health",
     result: "Zero visibility to #1 on Google Maps, then a custom CRM built to track every Google and Facebook ad dollar.",
   },
   {
-    image: "/proof/integrative-medicine-seo.png",
-    title: "Integrative Medicine US",
-    result: "$30K/month in new revenue, from organic traffic alone.",
+    image: "/proof/vibrant-health.png",
+    title: "Vibrant Health Center",
+    result: "SEO plus a complete website, built with GoHighLevel and proper EHR integration.",
   },
   {
     image: "/proof/cr8-ghl-automation.png",
     title: "CR8 Health",
-    result: "A fully automated GoHighLevel system running the entire clinic.",
+    result: "A complete system for their clinic, from sales to offboarding, built entirely in GoHighLevel.",
   },
   {
-    image: "/proof/voice-ai-jessica.png",
-    title: "DrJ Fields AI",
-    result: "A custom voice AI receptionist for the clinic, with its own call actions.",
+    image: "/proof/integrative-med-voice-ai.png",
+    title: "Integrative Medicine US",
+    result: "A personalized AI voice agent with custom actions, including escalating what it can't handle.",
   },
   {
-    image: "/proof/vibrant-health.png",
-    title: "Vibrant Health Center",
-    result: "Built their web presence from scratch, then layered in SEO and automation.",
-  },
-  {
-    image: "/proof/maa-taskboard.png",
-    title: "MAA Taskboard",
-    result: "Our own AI agent layer with self-fulfillment, built in-house.",
+    image: "/proof/uqab-corporation.png",
+    title: "Uqab Corporation",
+    result: "Built their entire tech infrastructure, website included.",
   },
   {
     image: "/proof/noxnetwork.png",
     title: "NOXNETWORK",
-    result: "The entire learn-and-earn infrastructure for a video editing education brand.",
+    result: "End-to-end tech infrastructure, including a dashboard for managing their editors.",
   },
   {
-    image: "/proof/scaling-infrastructure.png",
-    title: "Agency Client",
-    result: "Complete scaling infrastructure for an agency selling services internationally.",
+    image: "/proof/maa-taskboard.png",
+    title: "MAA Tech (in-house)",
+    result: "Our own AI agent layer, handling support tickets automatically.",
   },
-].filter((w) => w.image === "/proof/cr8-health-crm.png"); // TODO: remove this filter once the remaining screenshots are added to public/proof/
+];
 
 const INITIAL_COUNT = 4;
 
