@@ -1,3 +1,5 @@
+import Reveal from "./Reveal";
+
 const faqs = [
   {
     q: "What does MAA Tech actually do?",
@@ -21,7 +23,7 @@ const faqs = [
   },
   {
     q: "What does it cost?",
-    a: "Plans start at $750/month. See the Pricing section above for what's included at each tier.",
+    a: "It depends on your systems and how much ongoing work they need. Book a Tech Freedom Call and we'll scope it with you directly, no generic tiers.",
   },
   {
     q: "Why should I trust MAA Tech?",
@@ -45,11 +47,13 @@ export default function FAQ() {
         </div>
 
         <div className="space-y-4">
-          {faqs.map((faq) => (
-            <div key={faq.q} className="neo-raised-sm rounded-2xl p-6">
-              <p className="font-bold text-slate-800 mb-2">{faq.q}</p>
-              <p className="text-sm text-slate-500 leading-relaxed">{faq.a}</p>
-            </div>
+          {faqs.map((faq, i) => (
+            <Reveal key={faq.q} delay={Math.min(i * 0.05, 0.3)}>
+              <div className="neo-raised-sm rounded-2xl p-6">
+                <p className="font-bold text-slate-800 mb-2">{faq.q}</p>
+                <p className="text-sm text-slate-500 leading-relaxed">{faq.a}</p>
+              </div>
+            </Reveal>
           ))}
         </div>
       </div>

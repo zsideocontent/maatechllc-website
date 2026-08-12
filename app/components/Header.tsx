@@ -4,7 +4,7 @@ import Link from "next/link";
 const navLinks = [
   { href: "#how-it-works", label: "How It Works" },
   { href: "#services", label: "Services" },
-  { href: "#pricing", label: "Pricing" },
+  { href: "#proof", label: "Proof" },
   { href: "/case-studies", label: "Case Studies" },
   { href: "/about", label: "About" },
 ];
@@ -14,9 +14,7 @@ export default function Header() {
     <header className="sticky top-0 z-30 bg-[#FAFAFC]/90 backdrop-blur">
       <div className="mx-auto max-w-7xl px-6 lg:px-10 flex items-center justify-between h-20">
         <Link href="/" className="flex items-center gap-2.5">
-          <div className="neo-raised-sm rounded-xl p-1.5">
-            <Image src="/logos/maa-icon.png" alt="MAA Tech Agency" width={28} height={28} className="rounded-md" />
-          </div>
+          <Image src="/logos/maa-icon.png" alt="MAA Tech Agency" width={32} height={32} />
           <span className="font-extrabold text-base tracking-tight text-slate-900">
             MAA TECH <span className="font-medium text-slate-500">AGENCY</span>
           </span>

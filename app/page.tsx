@@ -4,8 +4,7 @@ import Problem from "./components/Problem";
 import Solution from "./components/Solution";
 import HowItWorks from "./components/HowItWorks";
 import Services from "./components/Services";
-import DashboardShowcase from "./components/DashboardShowcase";
-import Pricing from "./components/Pricing";
+import Proof from "./components/Proof";
 import Testimonials from "./components/Testimonials";
 import Security from "./components/Security";
 import FAQ from "./components/FAQ";
@@ -22,8 +21,7 @@ export default function Home() {
         <Solution />
         <HowItWorks />
         <Services />
-        <DashboardShowcase />
-        <Pricing />
+        <Proof />
         <Testimonials />
         <Security />
         <FAQ />

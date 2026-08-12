@@ -1,4 +1,5 @@
 import { ShieldCheck, Zap } from "lucide-react";
+import KnowledgeHub from "./KnowledgeHub";
 
 export default function HowItWorks() {
   return (
@@ -16,42 +17,45 @@ export default function HowItWorks() {
             business, so our team already understands your systems before an
             issue even comes in. That's what makes requests fast, not magic.
           </p>
-          <p className="text-slate-500 leading-relaxed">
+          <p className="text-slate-500 leading-relaxed mb-8">
             The AI agent can investigate approved systems, diagnose issues,
             and resolve certain problems automatically. When human
             intervention is required, it creates a structured task for our
             developer, it doesn't guess, and it doesn't touch anything
             outside what's been approved.
           </p>
+
+          <div className="grid sm:grid-cols-2 gap-4">
+            <div className="neo-raised-sm rounded-2xl p-5">
+              <div className="flex items-center gap-2.5 mb-2">
+                <div className="neo-pressed w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <Zap size={15} className="text-[#6C3FF5]" />
+                </div>
+                <p className="font-bold text-slate-800 text-sm">Handled automatically</p>
+              </div>
+              <p className="text-xs text-slate-500 leading-relaxed">
+                Approved, well-understood issues get diagnosed and resolved
+                directly, no waiting on a human first.
+              </p>
+            </div>
+
+            <div className="neo-raised-sm rounded-2xl p-5">
+              <div className="flex items-center gap-2.5 mb-2">
+                <div className="neo-pressed w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <ShieldCheck size={15} className="text-[#6C3FF5]" />
+                </div>
+                <p className="font-bold text-slate-800 text-sm">Escalated to a developer</p>
+              </div>
+              <p className="text-xs text-slate-500 leading-relaxed">
+                Anything needing judgment gets a structured task and a real
+                person, reviewed by QA before you see it.
+              </p>
+            </div>
+          </div>
         </div>
 
-        <div className="space-y-5">
-          <div className="neo-raised rounded-2xl p-7">
-            <div className="flex items-center gap-3 mb-3">
-              <div className="neo-pressed w-10 h-10 rounded-xl flex items-center justify-center">
-                <Zap size={18} className="text-[#6C3FF5]" />
-              </div>
-              <p className="font-bold text-slate-800">Handled automatically</p>
-            </div>
-            <p className="text-sm text-slate-500 leading-relaxed">
-              Approved, well-understood issues get diagnosed and resolved
-              directly, no waiting on a human to pick it up first.
-            </p>
-          </div>
-
-          <div className="neo-raised rounded-2xl p-7">
-            <div className="flex items-center gap-3 mb-3">
-              <div className="neo-pressed w-10 h-10 rounded-xl flex items-center justify-center">
-                <ShieldCheck size={18} className="text-[#6C3FF5]" />
-              </div>
-              <p className="font-bold text-slate-800">Escalated to a developer</p>
-            </div>
-            <p className="text-sm text-slate-500 leading-relaxed">
-              Anything that needs judgment, access outside approved
-              systems, or real engineering gets a structured task and a
-              real person, reviewed by QA before you see it.
-            </p>
-          </div>
+        <div className="neo-raised rounded-[2rem] py-12 px-6">
+          <KnowledgeHub />
         </div>
       </div>
     </section>

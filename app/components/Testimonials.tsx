@@ -1,4 +1,5 @@
 import Script from "next/script";
+import Reveal from "./Reveal";
 
 const videos = [
   { mediaId: "7xs8re946a", aspect: 0.5660377358490566 },
@@ -7,7 +8,7 @@ const videos = [
 
 export default function Testimonials() {
   return (
-    <section id="proof" className="py-24">
+    <section id="testimonials" className="py-24">
       <Script src="https://fast.wistia.com/player.js" strategy="lazyOnload" />
       {videos.map((v) => (
         <Script
@@ -19,9 +20,9 @@ export default function Testimonials() {
       ))}
 
       <div className="mx-auto max-w-7xl px-6 lg:px-10 grid lg:grid-cols-[minmax(0,1fr)_auto] gap-16 items-center">
-        <div>
+        <Reveal>
           <p className="text-sm font-bold uppercase tracking-widest text-[#6C3FF5] mb-3">
-            Proof
+            Testimonials
           </p>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-5 text-balance">
             Real clients, on camera
@@ -30,7 +31,7 @@ export default function Testimonials() {
             No stock testimonials, no written quotes we typed ourselves.
             Two clients, unscripted, on what actually changed.
           </p>
-        </div>
+        </Reveal>
 
         <div className="grid grid-cols-2 gap-6 w-full lg:w-auto">
           {videos.map((v) => (

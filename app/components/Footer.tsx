@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-6 lg:px-10 pb-16 grid sm:grid-cols-3 gap-10">
         <div>
           <div className="flex items-center gap-2.5 mb-4">
-            <Image src="/logos/maa-icon.png" alt="MAA Tech Agency" width={28} height={28} className="rounded-md" />
+            <Image src="/logos/maa-icon.png" alt="MAA Tech Agency" width={28} height={28} />
             <span className="font-extrabold text-slate-800 text-sm">
               MAA TECH <span className="font-medium text-slate-400">AGENCY</span>
             </span>
@@ -22,7 +22,6 @@ export default function Footer() {
           <ul className="space-y-2 text-sm text-slate-500">
             <li><Link href="/about" className="hover:text-slate-800 transition-colors">About</Link></li>
             <li><Link href="/case-studies" className="hover:text-slate-800 transition-colors">Case Studies</Link></li>
-            <li><a href="/#pricing" className="hover:text-slate-800 transition-colors">Pricing</a></li>
           </ul>
         </div>
 
