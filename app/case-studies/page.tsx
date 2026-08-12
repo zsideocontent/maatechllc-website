@@ -82,6 +82,14 @@ const caseStudies = [
     intervention: "Built our own AI agent layer on top of our internal taskboard, handling tickets automatically where it can.",
     result: "The same AI-diagnosis-and-escalation system this website describes, running on our own day-to-day operations.",
   },
+  {
+    client: "Ridgeback Builders",
+    title: "A tech infrastructure built from scratch",
+    image: "/proof/ridgeback-builders.png",
+    problem: "A growing construction and remodeling business with no existing tech foundation to run on.",
+    intervention: "Built their entire tech infrastructure from scratch, including their website, from the ground up.",
+    result: "A single reliable system supporting the business as it takes on more projects.",
+  },
 ];
 
 export default function CaseStudiesPage() {

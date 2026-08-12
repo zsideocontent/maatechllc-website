@@ -51,6 +51,11 @@ const wins = [
     title: "MAA Tech (in-house)",
     result: "Our own AI agent layer, handling support tickets automatically.",
   },
+  {
+    image: "/proof/ridgeback-builders.png",
+    title: "Ridgeback Builders",
+    result: "Handling their entire tech infrastructure, built from scratch.",
+  },
 ];
 
 const INITIAL_COUNT = 4;
