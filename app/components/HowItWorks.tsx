@@ -1,5 +1,5 @@
+import Image from "next/image";
 import { ShieldCheck, Zap } from "lucide-react";
-import KnowledgeHub from "./KnowledgeHub";
 
 export default function HowItWorks() {
   return (
@@ -54,8 +54,14 @@ export default function HowItWorks() {
           </div>
         </div>
 
-        <div className="neo-raised rounded-[2rem] py-12 px-6">
-          <KnowledgeHub />
+        <div className="neo-raised rounded-[2rem] p-6">
+          <Image
+            src="/graphics/knowledge-hub.png"
+            alt="A central knowledge hub connected to a business's website, CRM, automations, infrastructure, SEO, and payments systems"
+            width={800}
+            height={800}
+            className="w-full h-auto rounded-2xl"
+          />
         </div>
       </div>
     </section>
