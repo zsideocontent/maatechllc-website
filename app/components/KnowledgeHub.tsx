@@ -43,26 +43,6 @@ export default function KnowledgeHub() {
             />
           );
         })}
-        {satellites.map((s, i) => {
-          const p = pos(s.angle);
-          return (
-            <motion.circle
-              key={s.label}
-              r={3}
-              fill="#00B8D9"
-              cx={CENTER}
-              cy={CENTER}
-              animate={{ cx: [CENTER, p.x], cy: [CENTER, p.y], opacity: [0, 1, 0] }}
-              transition={{
-                duration: 1.6,
-                repeat: Infinity,
-                repeatDelay: satellites.length * 0.35,
-                delay: i * 0.35,
-                ease: "easeOut",
-              }}
-            />
-          );
-        })}
       </svg>
 
       {satellites.map((s, i) => {
