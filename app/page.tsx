@@ -1,5 +1,6 @@
 import Header from "./components/Header";
 import Hero from "./components/Hero";
+import VSL from "./components/VSL";
 import Problem from "./components/Problem";
 import Solution from "./components/Solution";
 import HowItWorks from "./components/HowItWorks";
@@ -17,6 +18,7 @@ export default function Home() {
       <Header />
       <main className="flex-1">
         <Hero />
+        <VSL />
         <Problem />
         <Solution />
         <HowItWorks />
